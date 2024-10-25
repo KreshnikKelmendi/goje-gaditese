@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import image from "../assets/cake1.png";
+import image from "../assets/gg-animation.mp4";
 
 const Banner = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -121,7 +121,7 @@ const Banner = () => {
         </motion.button>
       </div>
       <div className="lg:w-[30%] flex justify-center items-center">
-        <img className="p-8 object-cover" src={image} alt="" />
+        <video muted playsInline loop autoPlay className="p-8 object-cover" src={image} alt="" />
       </div>
     </motion.div>
   );
