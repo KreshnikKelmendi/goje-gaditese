@@ -9,7 +9,7 @@ const Form = () => {
             <input 
                 type="text" 
                 placeholder="Emri" 
-                className='w-full md:w-[306px] p-4 bg-[#FADEEA] rounded-[10px] outline-none text-[#1F1634]' 
+                className='w-[306px] md:w-[306px] p-4 bg-[#FADEEA] rounded-[10px] outline-none text-[#1F1634]' 
             />
             <input 
                 type="text" 

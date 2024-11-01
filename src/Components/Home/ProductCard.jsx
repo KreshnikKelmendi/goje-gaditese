@@ -4,7 +4,7 @@ const ProductCard = ({ backgroundColor, image, title, description, buttonColor, 
     return (
         <div className='w-full'>
         <div
-            className="lg:w-[355px] lg:h-[568px]"
+            className="lg:w-[355px] lg:h-[568px] mb-10 lg:mb-0"
             style={{
                 backgroundColor: backgroundColor,
                 
@@ -17,7 +17,7 @@ const ProductCard = ({ backgroundColor, image, title, description, buttonColor, 
             <img
                 src={image}
                 alt={title}
-                className='lg:w-[329px] lg:h-[282px] object-cover rounded-[10px]'
+                className='lg:w-[329px] lg:h-[282px] w-full h-[25vh] object-cover rounded-[10px]'
             />
             <p className='font-custom' style={{ color: '#000e5d', fontSize: '32px', margin: '20px 0 10px 0' }}>{title}</p>
             <p className='leading-[18px]' style={{ color: '#333', fontSize: '15px', flexGrow: 1 }}>{description}</p>

@@ -12,13 +12,13 @@ const Biography = () => {
     });
 
     return (
-        <div className="w-full flex flex-col lg:flex-row lg:px-[130px] 2xl:px-[211px] mt-20 lg:mt-44 relative">
+        <div className="w-full flex flex-col lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-44 relative">
             {/* Image */}
             <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover" />
 
             {/* SVG Drawing and Fill Animation */}
-            <div className="absolute top-[-15px] left-[58px]" ref={ref}>
-                <svg width="388" height="155" viewBox="0 0 388 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="absolute top-[-80px] lg:top-[-15px] lg:left-[58px]" ref={ref}>
+                <svg className='lg:w-[388px] w-[250px] lg:h-[155px]' viewBox="0 0 388 155" fill="none" xmlns="http://www.w3.org/2000/svg">
                     {/* First path (draw the stroke) */}
                     <motion.path
                         d="M3.04372 60.2185C1.88294 31.824 23.9377 9.0285 57.0199 3.82951C68.7245 1.96321 131.6 3.8293 181.514 3.82951C226.156 3.8297 339.261 6.61603 364.046 15.827C389.874 25.4254 386.391 77.4152 381.748 94.6118C378.034 108.369 342.862 108.876 325.741 107.409C325.064 108.342 324.116 114.288 325.741 130.605C327.2 145.259 332.358 150.687 335.496 151.931C335.84 152.028 336.168 152.118 336.478 152.201C336.182 152.16 335.852 152.073 335.496 151.931C328.628 150.005 315.168 145.382 309.2 140.203C302.931 134.764 294.787 117.941 291.498 110.209H247.388C216.047 110.209 150.173 114.208 75.5926 110.209C1.01243 106.21 4.2045 88.613 3.04372 60.2185Z"
@@ -57,7 +57,7 @@ const Biography = () => {
                     </motion.text>
                 </svg>
             </div>
-            <div className='absolute bottom-60 left-[110px]'>
+            <div className='absolute lg:bottom-60 left-3 lg:left-[110px]'>
                 <svg className='' width="49" height="55" viewBox="0 0 49 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <motion.path
                         initial={{ pathLength: 0 }}
@@ -66,7 +66,7 @@ const Biography = () => {
                 </svg>
             </div>
 
-            <div className='absolute top-[-100px] left-[470px]'>
+            <div className='absolute top-[-100px] left-[290px] lg:left-[470px]'>
                 <svg className='' width="88" height="75" viewBox="0 0 88 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <motion.path
                         initial={{ pathLength: 0 }}
@@ -78,7 +78,7 @@ const Biography = () => {
                 </svg>
 
             </div>
-            <div className='absolute bottom-16 left-[150px]'>
+            <div className='absolute bottom-2 top-32 lg:top-auto lg:bottom-16 lg:left-[150px]'>
                 <svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M34.6136 15.7765C34.7781 16.3024 32.8462 15.9503 34.0746 15.368C34.6336 15.103 34.7185 15.7355 34.8865 16.0898" stroke="#4A296A" stroke-width="3" stroke-linecap="round" />
                     <path d="M17.4969 21.3604C17.7586 21.9125 15.796 23.3088 15.8597 22.4584C15.9115 21.7663 17.0656 20.8642 17.5592 21.4918" stroke="#4A296A" stroke-width="3" stroke-linecap="round" />

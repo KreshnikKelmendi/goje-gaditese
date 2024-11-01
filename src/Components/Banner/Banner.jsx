@@ -18,49 +18,37 @@ const Banner = () => {
     };
   }, []);
 
-  const container = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.6,
+        staggerChildren: 0.15,
+        delayChildren: 0.5,
       },
     },
   };
 
-  const letterAnimation = {
-    hidden: { opacity: 0, y: 50, scale: 0.8, rotate: -15 },
+  const wordAnimation = {
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      rotate: 0,
       transition: {
         type: 'spring',
-        stiffness: 100,
-        damping: 6,
+        stiffness: 120,
+        damping: 12,
       },
     },
   };
 
-  const bgVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1.2,
-        ease: [0.4, 0.01, 0.2, 1],
-      },
-    },
-  };
+  const sentence = ["GREAT", "FOOD,", "AND", "A", "GREAT", "STORY"];
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col lg:flex-row items-center lg:h-[725px] relative" // Added relative for positioning cursor
+      className="w-full flex flex-col lg:flex-row items-center lg:h-[725px] relative"
       onMouseEnter={() => setCursorActive(true)}
       onMouseLeave={() => setCursorActive(false)}
     >
@@ -85,21 +73,19 @@ const Banner = () => {
 
       <div className="lg:w-[70%] bg-[#4A296A] h-[50vh] z-10 lg:rounded-r-full lg:h-full px-5 lg:px-[60px] flex flex-col justify-center">
         <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
+          variants={containerVariants}
           className="font-custom text-[38px] w-fit 2xl:w-[841px] lg:text-[84px] lg:leading-[83.7px] text-white flex flex-wrap"
         >
-          {'GREAT FOOD, AND A GREAT STORY'.split('').map((letter, index) => (
+          {sentence.map((word, index) => (
             <motion.span
               key={index}
-              variants={letterAnimation}
-              className="inline-block"
+              variants={wordAnimation}
+              className="inline-block mr-2"
               whileHover={{ scale: 1.2, color: '#D53D6E' }}
               onMouseEnter={() => setCursorActive(true)}
               onMouseLeave={() => setCursorActive(false)}
             >
-              {letter === ' ' ? '\u00A0' : letter}
+              {word}
             </motion.span>
           ))}
         </motion.div>
