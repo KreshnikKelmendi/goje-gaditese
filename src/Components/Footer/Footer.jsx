@@ -1,11 +1,14 @@
 import React from 'react'
 import Form from './Form'
-import { AiFillInstagram, AiFillFacebook, AiOutlineInstagram } from 'react-icons/ai';
+import { AiFillFacebook, AiOutlineInstagram } from 'react-icons/ai';
+import { useLocation } from 'react-router-dom';
 
 
 const Footer = () => {
+    const location = useLocation();
+
     return (
-        <div className='w-full h-auto bg-[#1F1634] mt-24 rounded-t-[10px] z-30 relative'>
+        <div className={`w-full h-auto bg-[#1F1634] ${location.pathname === '/kontakt' ? 'mt-0' : 'mt-6 lg:mt-24'} ${location.pathname === '/kontakt' ? 'rounded-t-none' : 'rounded-t-[10px]'} z-30 relative`}>
             <div className='text-center pt-12 md:pt-24 px-4'>
                 <p className='font-custom text-[30px] md:text-[55px] leading-[40px] md:leading-[62px] text-[#FADEEA]'>
                     LINI NJË TAKIM<br />
@@ -67,16 +70,23 @@ const Footer = () => {
 
 
                 </div>
-
-                <div className='flex flex-col lg:flex-row justify-between items-center py-6 lg:py-0'>
+                <div className='lg:pr-[60px] flex lg:hidden mt-6 px-3'>
+                    <a href="https://www.instagram.com/gojegaditese/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <AiOutlineInstagram className="text-white text-[31px] mx-2 hover:scale-125 duration-150 ease-linear" />
+                    </a>
+                    <AiFillFacebook className="text-white rounded-full text-[31px] mx-2 lg:mt-4" />
+                </div>
+                <div className='flex flex-col lg:flex-row justify-between items-center lg:py-0'>
                     <div className='lg:px-[60px] px-5 mt-10'>
                         <p className='text-[45px] lg:text-[128px] leading-tight text-[#D53D6E] font-custom1 uppercase'>Get in Touch!</p>
                         <p className='text-[18px] text-[#FADEEA] font-custom1 leading-tight lg:leading-[21.6px] py-3 lg:mt-[-35px]'>
                             © 2021 Goje Gaditese. All Rights Reserved. Powered by Trekuartista
                         </p>
                     </div>
-                    <div className='lg:pr-[60px] flex lg:block'>
-                        <AiOutlineInstagram className="text-white text-[31px] mx-2" />
+                    <div className='lg:pr-[60px] hidden lg:block'>
+                        <a href="https://www.instagram.com/gojegaditese/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <AiOutlineInstagram className="text-white text-[31px] mx-2 hover:scale-125 duration-150 ease-linear" />
+                        </a>
                         <AiFillFacebook className="text-white rounded-full text-[31px] mx-2 lg:mt-4" />
                     </div>
                 </div>

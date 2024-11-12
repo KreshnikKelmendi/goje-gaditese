@@ -1,29 +1,60 @@
-import React from 'react';
-import img from "../assets/wing.png"
+import React, { useState } from 'react';
+import img from "../assets/wing.png";
 import { categoriesData } from './foodMenu';
-
-
-
-// Sample data array with more fields
-
+import ProductMenu from './ProductMenu';
 
 const CategoryMenu = () => {
+    const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]); // Default to the first category
+    const [loading, setLoading] = useState(false); // State for loading spinner
+    const [showCategories, setShowCategories] = useState(false); // State to toggle category visibility on mobile
+
+    const handleCategoryClick = (category) => {
+        setLoading(true); // Start loading
+        setShowCategories(false); // Hide categories after clicking
+        setTimeout(() => {
+            setSelectedCategory(category); // Change category after 1500ms
+            setLoading(false); // Stop loading
+        }, 200);
+    };
+
     return (
         <div className='w-full'>
             <div className='lg:px-[60px] px-5 mt-10'>
-                <p className='font-custom1 text-[32px] text-[#4A296A]'>CATEGORY</p>
-                <div className=''>
-                    <div className='flex flex-col lg:flex-row w-fit lg:flex-wrap justify-start lg:space-x-12 mt-8 '>
-                        {categoriesData?.map((category) => (
-                            <div key={category.id} className='font-custom1 text-[#D53C6F] uppercase text-[18px]'>
-                                {category.title}
-                            </div>
-                        ))}
-                    </div>
-               
-                    <div className='absolute top-72 right-0 lg:top-64 lg:right-0 flex z-10'>
-                        <img src={img} alt='' className='w-52 h-52 lg:w-[408px] lg:h-[411px]' />
-                        <div className='lg:mt-32 hidden lg:block'>
+                <p className='font-custom1 text-[32px] text-[#4A296A]'>KATEGORITË</p>
+
+                {/* Toggle button for mobile devices */}
+                <div className="lg:hidden mt-5">
+                    <button
+                        className="px-4 w-full py-2 bg-[#D53C6F] text-white font-bold rounded-[20px]"
+                        onClick={() => setShowCategories(!showCategories)}
+                    >
+                        {showCategories ? 'Mbyll Kategoritë' : 'Shfaq Kategoritë'}
+                    </button>
+
+                    {/* Display active category name below the button on mobile */}
+                    {!showCategories && (
+                        <div className="mt-10 underline underline-offset-8 text-center font-custom text-3xl text-[#D53C6F] font-bold uppercase">
+                            {selectedCategory.category}
+                        </div>
+                    )}
+                </div>
+
+                {/* Category list with conditional rendering */}
+                <div className={`${showCategories ? 'grid' : 'hidden'} grid-cols-2 gap-4 lg:grid justify-center items-center 2xl:grid-cols-4 lg:w-3/4 lg:space-x-0 mt-8`}>
+                    {categoriesData.map((category) => (
+                        <div
+                            key={category.id}
+                            className={`font-custom1 text-[#D53C6F] uppercase text-[16px] cursor-pointer ${selectedCategory.id === category.id ? 'font-bold underline lg:no-underline lg:px-4 py-1 w-fit flex lg:justify-center lg:items-center border-b-red-600 lg:border lg:border-[#D53C6F] rounded-[20px]' : ''}`}
+                            onClick={() => handleCategoryClick(category)}
+                        >
+                            {category.category}
+                        </div>
+                    ))}
+                </div>
+
+                <div className='absolute top-72 right-0 lg:top-64 lg:right-0 flex z-10'>
+                    <img src={img} alt='' className='w-40 h-40 lg:w-[408px] lg:h-[411px]' />
+                    <div className='lg:mt-32 hidden lg:block'>
                         <svg width="204" height="1973" viewBox="0 0 204 1973" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_190_395" maskUnits="userSpaceOnUse" x="0" y="0" width="202" height="3821">
                                 <path d="M25.7835 770.111L2.84962 770.111C2.84962 803.318 30.1253 830.307 63.6354 830.307C91.9354 830.307 115.76 811.057 122.506 785.105C125.312 794.784 130.544 803.671 137.959 811.013L154.168 794.961C147.021 787.883 143.08 778.468 143.08 768.457C143.08 758.446 147.021 749.031 154.168 741.953L137.959 725.901C130.121 733.663 124.711 743.144 122.039 753.507C114.713 728.392 91.3119 709.959 63.6354 709.959L63.6354 732.67C84.4986 732.67 101.487 749.472 101.487 770.133C101.487 790.793 84.4986 807.595 63.6354 807.595C59.4717 807.595 55.4861 806.912 51.7455 805.677C59.2936 795.49 63.4573 783.12 63.4573 770.133C63.4573 749.141 52.6806 730.002 34.6453 718.933L22.5772 738.249C33.8214 745.15 40.5235 757.079 40.5235 770.155C40.5235 778.269 37.9184 785.987 33.1757 792.337C28.5444 786.119 25.7835 778.423 25.7835 770.111Z" fill="#FADEEA" />
@@ -77,10 +108,17 @@ const CategoryMenu = () => {
                         </svg>
 
                     </div>
-                    </div>
-                  
                 </div>
             </div>
+
+            {/* Render loading spinner or ProductMenu based on loading state */}
+            {loading ? (
+                <div className="flex justify-center items-center mt-10">
+                    <div className="w-12 h-12 border-4 border-t-[#D53C6F] border-[#4A296A] rounded-full animate-spin"></div>
+                </div>
+            ) : (
+                <ProductMenu category={selectedCategory} />
+            )}
         </div>
     );
 }

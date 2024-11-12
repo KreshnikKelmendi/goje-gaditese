@@ -12,7 +12,7 @@ const Biography = () => {
     });
 
     return (
-        <div className="w-full flex flex-col lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-44 relative">
+        <div className="w-full container mx-auto flex flex-col lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-44 relative">
             {/* Image */}
             <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover" />
 
@@ -88,7 +88,7 @@ const Biography = () => {
 
 
             </div>
-            <div className='flex flex-col lg:flex-row justify-center items-center lg:pl-16'>
+            <div className='flex flex-col lg:flex-row justify-center items-center lg:pl-16 py-8 lg:py-0'>
                 <TextBiography />
             </div>
         </div>

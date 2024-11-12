@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import image from "../assets/gg-animation.mp4";
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -42,13 +43,17 @@ const Banner = () => {
     },
   };
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const sentence = ["GREAT", "FOOD,", "AND", "A", "GREAT", "STORY"];
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col lg:flex-row items-center lg:h-[725px] relative"
+      className="w-full flex flex-col-reverse lg:flex-row items-center lg:h-[725px] relative bg-[#4A296A]"
       onMouseEnter={() => setCursorActive(true)}
       onMouseLeave={() => setCursorActive(false)}
     >
@@ -74,7 +79,7 @@ const Banner = () => {
       <div className="lg:w-[70%] bg-[#4A296A] h-[50vh] z-10 lg:rounded-r-full lg:h-full px-5 lg:px-[60px] flex flex-col justify-center">
         <motion.div
           variants={containerVariants}
-          className="font-custom text-[38px] w-fit 2xl:w-[841px] lg:text-[84px] lg:leading-[83.7px] text-white flex flex-wrap"
+          className="font-custom text-[38px] w-fit 2xl:w-[841px] lg:text-[84px] leading-tight lg:leading-[83.7px]  text-white flex flex-wrap"
         >
           {sentence.map((word, index) => (
             <motion.span
@@ -93,20 +98,22 @@ const Banner = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
-          className="text-[#D53D6E] mt-10 lg:w-[541px] text-[18px]"
+          className="text-[#D53D6E] mt-10 lg:w-[541px] text-[18px] font-custom1"
         >
           Si një shpikje e momentit e mamit duke provuar me format prerëse të biskotave.
         </motion.p>
+        <Link to="/produktet" onClick={handleClick}>
         <motion.button
           whileHover={{ scale: 1.1, backgroundColor: '#C22E5E' }}
-          className="w-[131px] h-[32px] bg-[#D53D6E] rounded-[20px] text-[#F3CCE7] text-[14px] mt-10"
+          className="w-full lg:w-[157px] flex justify-center items-center font-custom1 lg:h-[34px] bg-[#D53D6E] py-3 lg:py-0 rounded-[20px] text-[#FADEEA] text-[14px] mt-10"
           onMouseEnter={() => setCursorActive(true)}
           onMouseLeave={() => setCursorActive(false)}
         >
-          View More
+          Shiko më shumë
         </motion.button>
+        </Link>
       </div>
-      <div className="lg:w-[30%] flex justify-center items-center">
+      <div className="lg:w-[30%] flex justify-center items-center ">
         <video muted playsInline loop autoPlay className="p-8 object-cover" src={image} alt="" />
       </div>
     </motion.div>

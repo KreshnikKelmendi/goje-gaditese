@@ -12,3 +12,7 @@
   src: url(../public/font/fonts/goodly-light.otf)
 }
 
+.active{
+  color: #D53C6F;
+}
+

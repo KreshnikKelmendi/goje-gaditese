@@ -10,14 +10,14 @@ const AboutUs = () => {
     });
     return (
         <>
-            <div className="flex flex-col lg:flex-row lg:h-[307px] px-5 py-16 lg:py-0 justify-between lg:items-center bg-[#1F1634] lg:px-[60px]">
-                <p className="text-[44px] lg:text-[84px] font-custom1 mb-2 text-[#FADEEA]">KUSH JEMI NE</p>
-                <p className="text-[18px] font-custom leading-[21.6px] text-justify tracking-tighter lg:w-[625px] text-[#FADEEA]">
+            <div className="flex flex-col lg:flex-row lg:h-[307px] px-5 py-16 lg:py-0 lg:items-center bg-[#1F1634] lg:px-[60px]">
+                <p className="text-[44px] lg:text-[84px] font-custom1 font-extrabold mb-2 text-[#FADEEA]">KUSH JEMI NE</p>
+                <p className="text-[18px] font-custom leading-[21.6px] text-justify tracking-tighter lg:w-[625px] text-[#FADEEA] 2xl:pl-40">
                     Të gjitha produktet e cateringut janë të gatuara në shtëpi nga ne, dhe si të tilla mbajnë cilësinë e produkteve që përdor çdo njeri në shtëpi
                 </p>
             </div>
 
-            <div className="w-full flex flex-col justify-center items-center lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-44 relative">
+            <div className="w-full flex flex-col justify-center items-center lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-44 lg:mt-44 relative">
                 {/* Image */}
                 <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover" />
 

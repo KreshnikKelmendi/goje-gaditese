@@ -7,6 +7,9 @@ import MenuPage from './Components/Pages/MenuPage';
 import GalleryPage from './Components/Pages/GalleryPage';
 import ProductsPage from './Components/Pages/ProductsPage';
 import AboutUsPage from './Components/Pages/AboutUsPage';
+import SinglePageOfProduct from './Components/Pages/SinglePageOfProduct';
+import ContactPage from './Components/Pages/ContactPage';
+import ScrollToTopButton from './Components/Pages/ScrollToTopButtin';
 
 function App() {
   return (
@@ -18,9 +21,12 @@ function App() {
             <Route path="/kush-jemi" element={<AboutUsPage />} />
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/produktet" element={<ProductsPage />} />
+            <Route path="/produktet/:productID" element={<SinglePageOfProduct />} />
             <Route path="/galeria" element={<GalleryPage />} />
+            <Route path="/kontakt" element={<ContactPage />} />
           </Routes>
         <Footer />
+        <ScrollToTopButton />
       </BrowserRouter>
     </>
   );
