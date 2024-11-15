@@ -24,7 +24,7 @@ const ProductCard = ({ backgroundColor, descriptionColor, image, title, descript
                     alt={title}
                     className='lg:w-[329px] lg:h-[282px] w-full h-[25vh] object-cover rounded-[10px]'
                 />
-                <p className='font-custom' style={{ color: '#000e5d', fontSize: '32px', margin: '20px 0 10px 0' }}>{title}</p>
+                <p className='font-custom leading-[33px]' style={{ color: '#000e5d', fontSize: '32px', margin: '20px 0 10px 0' }}>{title}</p>
                 <p className='leading-[18px] font-custom1 text-[15px]' style={{color: descriptionColor, fontSize: '15px',flexGrow: 1}}>
                     {description}
                 </p>

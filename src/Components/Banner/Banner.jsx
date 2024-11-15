@@ -47,13 +47,13 @@ const Banner = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const sentence = ["GREAT", "FOOD,", "AND", "A", "GREAT", "STORY"];
+  const sentence = ["SHËRBIMI", "I", "CATERING-UT", "NGA", "SHTËPIA", "NË", "BIZNES"];
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col-reverse lg:flex-row items-center lg:h-[725px] relative bg-[#4A296A]"
+      className="w-full flex flex-col-reverse lg:flex-row items-center lg:h-[725px] relative"
       onMouseEnter={() => setCursorActive(true)}
       onMouseLeave={() => setCursorActive(false)}
     >
@@ -98,11 +98,11 @@ const Banner = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
-          className="text-[#D53D6E] mt-10 lg:w-[541px] text-[18px] font-custom1"
+          className="text-[#D53D6E] mt-10 lg:w-[541px] text-[18px] font-custom1 text-justify tracking-tighter leading-[21.6px]"
         >
-          Si një shpikje e momentit e mamit duke provuar me format prerëse të biskotave.
+          Gojë Gaditëse është një markë e njohur në fushën e catering-ut, duke kombinuar përkushtimin ndaj cilësisë dhe shijes me një qasje tërheqëse për klientët që kërkojnë diçka më shumë për eventet e tyre.
         </motion.p>
-        <Link to="/produktet" onClick={handleClick}>
+        <Link to="/kush-jemi" onClick={handleClick}>
         <motion.button
           whileHover={{ scale: 1.1, backgroundColor: '#C22E5E' }}
           className="w-full lg:w-[157px] flex justify-center items-center font-custom1 lg:h-[34px] bg-[#D53D6E] py-3 lg:py-0 rounded-[20px] text-[#FADEEA] text-[14px] mt-10"
@@ -113,7 +113,7 @@ const Banner = () => {
         </motion.button>
         </Link>
       </div>
-      <div className="lg:w-[30%] flex justify-center items-center ">
+      <div className="lg:w-[30%] bg-white flex justify-center items-center">
         <video muted playsInline loop autoPlay className="p-8 object-cover" src={image} alt="" />
       </div>
     </motion.div>

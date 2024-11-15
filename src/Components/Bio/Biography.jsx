@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import { useInView } from 'react-intersection-observer'; // Import the hook
-import bioImage from '../assets/benida-sanida.png';
+import bioImage from '../assets/sanida-benida.jpg';
 import TextBiography from './TextBiography';
 
 const Biography = () => {
@@ -14,10 +14,10 @@ const Biography = () => {
     return (
         <div className="w-full container mx-auto flex flex-col lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-44 relative">
             {/* Image */}
-            <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover" />
+            <img src={bioImage} alt="" className=" lg:h-[497px] object-cover rounded-[30px]" />
 
             {/* SVG Drawing and Fill Animation */}
-            <div className="absolute top-[-80px] lg:top-[-15px] lg:left-[58px]" ref={ref}>
+            <div className="absolute top-[-80px] lg:top-[-35px] lg:left-[0px]" ref={ref}>
                 <svg className='lg:w-[388px] w-[250px] lg:h-[155px]' viewBox="0 0 388 155" fill="none" xmlns="http://www.w3.org/2000/svg">
                     {/* First path (draw the stroke) */}
                     <motion.path
@@ -36,7 +36,7 @@ const Biography = () => {
                         fill="#4A296A"
                         initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ duration: 1, ease: 'easeInOut', delay: 2.2 }} // Delayed to start after stroke animation
+                        transition={{ duration: 1, ease: 'easeInOut', delay: 2.2 }}
                     />
 
                     {/* Text Animation Inside SVG */}
@@ -53,7 +53,7 @@ const Biography = () => {
                         animate={inView ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 1, ease: 'easeInOut', delay: 3.5 }} // Delayed after background animation
                     >
-                        Ne jemi Benida dhe Sanida
+                        Ne jemi Gojë Gaditëset
                     </motion.text>
                 </svg>
             </div>

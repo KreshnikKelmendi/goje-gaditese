@@ -8,27 +8,39 @@ const SinglePageOfProduct = () => {
 
     if (!product) {
         return (
-            <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>
+            <div className='font-custom text-2xl mt-5 flex justify-center items-center text-center h-screen'>
                 Produkti nuk u gjet. BAD REQUEST!
             </div>
         );
     }
 
     return (
-        <div className='w-full h-screen relative'>
+        <div className='w-full min-h-screen flex flex-col items-center'>
+            {/* Header Section */}
             <div
-                className='w-full h-[307px] lg:h-[250px] px-5 lg:px-[60px] '
+                className='w-full py-8 lg:py-10'
                 style={{ backgroundColor: product.backgroundColor }}
             >
-                <div className='pt-10'>
-                    <img className='w-full lg:h-[416px] object-cover rounded-[10px]' alt='' src={product.image} />
+                <div className='lg:px-[60px] px-5 mx-auto'>
+                    <img
+                        className='w-full h-auto max-h-[400px] object-cover rounded-[10px]'
+                        alt={product.title}
+                        src={product.image}
+                    />
                 </div>
-                <div className='mt-6'>
-                    <p style={{ color: product.titleColor }} className='font-custom uppercase text-[32px] lg:text-[78px]'>{product.title}</p>
-                    <div className=''>
-                        <p className='lg:w-1/2 text-justify font-custom1 tracking-tighter'>{product.description}</p>
-                    </div>
-                </div>
+            </div>
+
+            {/* Content Section */}
+            <div className='w-full lg:px-[60px] px-5 py-8'>
+                <p
+                    className='font-custom uppercase text-2xl lg:text-[48px] mb-6'
+                    style={{ color: product.titleColor }}
+                >
+                    {product.title}
+                </p>
+                <p className='text-sm lg:text-[15px] leading-relaxed text-justify font-custom1 tracking-tight'>
+                    {product.description}
+                </p>
             </div>
         </div>
     );

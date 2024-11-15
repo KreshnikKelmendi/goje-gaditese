@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'; // Import Framer Motion
 import { useInView } from 'react-intersection-observer'; // Import the hook
-import bioImage from '../assets/benida-sanida.png';
+import bioImage from '../assets/sanida-benida.jpg';
 
 const AboutUs = () => {
     const { ref, inView } = useInView({
@@ -10,16 +10,18 @@ const AboutUs = () => {
     });
     return (
         <>
-            <div className="flex flex-col lg:flex-row lg:h-[307px] px-5 py-16 lg:py-0 lg:items-center bg-[#1F1634] lg:px-[60px]">
-                <p className="text-[44px] lg:text-[84px] font-custom1 font-extrabold mb-2 text-[#FADEEA]">KUSH JEMI NE</p>
-                <p className="text-[18px] font-custom leading-[21.6px] text-justify tracking-tighter lg:w-[625px] text-[#FADEEA] 2xl:pl-40">
-                    Të gjitha produktet e cateringut janë të gatuara në shtëpi nga ne, dhe si të tilla mbajnë cilësinë e produkteve që përdor çdo njeri në shtëpi
+            <div className="flex flex-col lg:flex-row lg:h-[307px] px-5 py-16 lg:py-0 lg:justify-between 2xl:justify-start lg:items-center bg-[#1F1634] lg:px-[60px]">
+                <p className="text-[44px] lg:text-[64px] 2xl:text-[84px] font-custom1 font-extrabold mb-2 text-[#FADEEA]">KUSH JEMI NE</p>
+                <p className="text-[18px] font-custom leading-[21.6px] text-justify tracking-tighter lg:w-1/2 2xl:w-[725px] text-[#FADEEA] 2xl:pl-40">
+                    Goje Gaditese nisi si një projekt pasioni, i krijuar nga dëshira për të ofruar ushqim të shijshëm dhe të shëndetshëm për ngjarje të ndryshme, duke përdorur përbërës lokalë dhe recetave tradicionale.<br /><br/> Fillimisht, shërbimi i catering-ut u ofrua nga shtëpia, ku ekipi i vogël gatunte me dashuri dhe kujdes për miqtë dhe familjen. Gjatë kohës, fjala për cilësinë dhe shijen e shkëlqyer u përhap shpejt, dhe kërkesa për shërbimin u rrit ndjeshëm.
+
+
                 </p>
             </div>
 
             <div className="w-full flex flex-col justify-center items-center lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-44 lg:mt-44 relative">
                 {/* Image */}
-                <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover" />
+                <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover rounded-[30px]" />
 
                 {/* SVG Drawing and Fill Animation */}
                 <div className="absolute top-[-70px] lg:top-[10px] ml-[-140px] lg:ml-[-650px]" ref={ref}>
@@ -58,7 +60,7 @@ const AboutUs = () => {
                             animate={inView ? { opacity: 1 } : { opacity: 0 }}
                             transition={{ duration: 1, ease: 'easeInOut', delay: 3.5 }} // Delayed after background animation
                         >
-                            Ne jemi Benida dhe Sanida
+                            Ne jemi Gojë Gaditëset!
                         </motion.text>
                     </svg>
                 </div>

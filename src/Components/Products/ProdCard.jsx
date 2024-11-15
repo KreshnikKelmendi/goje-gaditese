@@ -44,7 +44,7 @@ const ProdCard = ({ product, index }) => {
       />
       <div className="flex flex-col justify-center mt-2 lg:mt-0 lg:p-4 lg:w-2/3 2xl:ml-5">
         <div>
-          <p className="text-[32px] font-custom leading-[38.8px]" style={{ color: product.titleColor }}>
+          <p className="text-[32px] font-custom leading-[30.8px]" style={{ color: product.titleColor }}>
             {product.title}
           </p>
           <p className="mt-5 text-[15px] leading-[18px] font-custom1" style={{ color: product.descriptionColor }}>
