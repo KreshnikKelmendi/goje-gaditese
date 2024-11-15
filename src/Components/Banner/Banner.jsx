@@ -98,7 +98,7 @@ const Banner = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
-          className="text-[#D53D6E] mt-10 lg:w-[541px] text-[18px] font-custom1 text-justify tracking-tighter leading-[21.6px]"
+          className="text-[#D53D6E] mt-10 lg:w-[541px] text-[18px] font-custom1 leading-[21.6px]"
         >
           Gojë Gaditëse është një markë e njohur në fushën e catering-ut, duke kombinuar përkushtimin ndaj cilësisë dhe shijes me një qasje tërheqëse për klientët që kërkojnë diçka më shumë për eventet e tyre.
         </motion.p>
