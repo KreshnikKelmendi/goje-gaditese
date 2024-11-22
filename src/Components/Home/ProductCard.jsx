@@ -37,7 +37,7 @@ const ProductCard = ({
             }}
         >
             <div
-                className="lg:w-[355px] 2xl:w-[465px] 2xl:mx-[5px] lg:h-[518px] 2xl:h-[529px] mb-10 lg:mb-0"
+                className="lg:w-[355px] 2xl:w-[465px] 2xl:mx-[5px] lg:h-[518px] 2xl:h-[599px] mb-10 lg:mb-0"
                 style={{
                     padding: '15px',
                     display: 'flex',

@@ -76,7 +76,7 @@ const Banner = () => {
         />
       )}
 
-      <div className="lg:w-[70%] bg-[#4A296A] h-[55vh] z-10 lg:rounded-r-full lg:h-full px-6 lg:px-[60px] flex flex-col justify-center">
+      <div className="lg:w-[73%] bg-[#4A296A] h-[55vh] z-10 lg:rounded-r-full lg:h-full px-6 lg:px-[60px] flex flex-col justify-center">
         <motion.div
           variants={containerVariants}
           className="font-custom text-[38px] tracking-[2px] lg:tracking-[3.5px] w-fit 2xl:w-[1041px] lg:text-[84px] leading-tight lg:leading-[83.7px] text-white flex flex-wrap"

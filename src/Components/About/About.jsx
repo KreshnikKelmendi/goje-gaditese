@@ -98,7 +98,7 @@ const About = () => {
             {/* Title */}
             <motion.p
                 ref={ref}
-                className='text-[28px] lg:text-[48px] text-[#D53C6F] font-custom tracking-[1px] lg:tracking-[3px] uppercase w-full lg:w-[1126px] 2xl:w-[1540px] leading-tight lg:leading-[62.85px]'
+                className='text-[28px] lg:text-[48px] text-[#D53C6F] font-custom tracking-[1px] lg:tracking-[3px] uppercase w-full lg:w-[1126px] 2xl:w-[1440px] leading-tight lg:leading-[62.85px]'
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={linearAnimation}
