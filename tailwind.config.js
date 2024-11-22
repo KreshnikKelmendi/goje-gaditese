@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['Goodly'],
-        custom1: ['Goodly Sans']
+        custom: ['DupletRounded'],
+        custom1: ['DupletRounded-Thin']
       },
     },
     

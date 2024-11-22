@@ -5,7 +5,7 @@ import { products } from './products';
 
 const ProductsList = () => {
   return (
-    <div className="lg:px-[60px] container mx-auto px-5 grid lg:grid-cols-2 gap-4 mt-12">
+    <div className="lg:px-[60px] container mx-auto px-6 grid lg:grid-cols-2 gap-4 mt-12">
       {products.map((product) => (
         <ProdCard key={product.id} product={product} />
       ))}

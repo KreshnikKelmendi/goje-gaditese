@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
+import logo from "../assets/Group 108.png"
 
 function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,25 +31,19 @@ function ScrollToTopButton() {
     isVisible && (
       <button
         onClick={scrollToTop}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '6px',
-          padding: '7px',
-          fontSize: '20px',
-          borderRadius: '10px',
-          backgroundColor: '#D53C6F',
-          color: '#fff',
-          border: 'none',
-          cursor: 'pointer',
-          zIndex: '1000',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
+        className="fixed bottom-1 right-[3px] p-2 w-10 h-10 bg-[#4A296A] flex items-center justify-center cursor-pointer z-50 transition-all duration-300 group"
         aria-label="Scroll to top"
       >
-        <FaArrowUp />
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-[16px] h-auto opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+        />
+        {/* Arrow Icon, hidden by default, visible on hover */}
+        <FaArrowUp
+          className="absolute opacity-0 text-white transition-opacity duration-300 ease-in-out group-hover:opacity-100 text-xl"
+        />
       </button>
     )
   );

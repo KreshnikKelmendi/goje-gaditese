@@ -8,9 +8,9 @@ const Footer = () => {
     const location = useLocation();
 
     return (
-        <div className={`w-full h-auto bg-[#1F1634] ${location.pathname === '/kontakt' ? 'mt-0' : 'mt-6 lg:mt-24'} ${location.pathname === '/kontakt' ? 'rounded-t-none' : 'rounded-t-[10px]'} z-30 relative`}>
+        <div className={`w-full h-auto bg-[#1F1634] ${location.pathname === '/kontakt' ? 'mt-0' : 'mt-12 lg:mt-24'} ${location.pathname === '/kontakt' ? 'rounded-t-none' : 'rounded-t-[10px]'} z-30 relative`}>
             <div className='text-center pt-12 md:pt-24 px-4'>
-                <p className='font-custom text-[30px] md:text-[55px] leading-[40px] md:leading-[62px] text-[#FADEEA]'>
+                <p className='font-custom tracking-[3px] text-[30px] md:text-[55px] leading-[40px] md:leading-[62px] text-[#FADEEA]'>
                     LINI NJË TAKIM<br />
                     ME GOJË GADITËSE
                 </p>
@@ -78,8 +78,8 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-col lg:flex-row justify-between items-center lg:py-0'>
                     <div className='lg:px-[60px] px-5 mt-10'>
-                        <p className='text-[45px] lg:text-[128px] leading-tight text-[#D53D6E] font-custom1 uppercase'>Get in Touch!</p>
-                        <p className='text-[18px] text-[#FADEEA] font-custom1 leading-tight lg:leading-[21.6px] py-3 lg:mt-[-35px]'>
+                        <p className='text-[45px] lg:text-[128px] leading-tight text-[#D53D6E] font-custom tracking-[3px] uppercase'>Get in Touch!</p>
+                        <p className='text-[16px] text-[#FADEEA] font-custom1 tracking-[3px] leading-tight lg:leading-[21.6px] py-3 lg:mt-[-30px]'>
                             © 2021 Goje Gaditese. All Rights Reserved. Powered by Trekuartista
                         </p>
                     </div>

@@ -38,12 +38,12 @@ const Form = () => {
 
         {/* Submit button */}
         <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
-            <p className='text-center md:text-left text-[#FADEEA] font-custom1 font-light mt-6 lg:mt-0'>© 2021 Goje Gaditese.</p>
+            <p className='text-center md:text-left text-[#FADEEA] font-custom1 tracking-[1px] text-[16px] font-light mt-6 lg:mt-0'>© 2021 Goje Gaditese.</p>
             <button 
                 type="submit" 
                 className="w-full lg:w-[131px] h-[50px] lg:h-[32px] bg-[#D53D6E] rounded-[20px] text-[#F3CCE7] text-[14px] mt-4 md:mt-0"
             >
-                Submit
+                Dërgo
             </button>
         </div>
     </form>

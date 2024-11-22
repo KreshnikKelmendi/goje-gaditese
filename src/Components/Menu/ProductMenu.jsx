@@ -15,11 +15,11 @@ const Product = ({ product, index }) => {
             className="border-b w-full lg:w-[550px] border-[#4A296A] pb-4 mb-4"
         >
             <div className="flex items-center space-x-2 mb-2">
-                <p className="text-[28px] lg:text-[48px] uppercase font-custom text-[#D53C6F]">
+                <p className="text-[28px] lg:text-[48px] leading-[35px] lg:leading-[55.6px] uppercase font-custom tracking-[2px] text-[#D53C6F]">
                     {product.name}
                 </p>
             </div>
-            <div className="text-left text-[#1F1634] text-[20px] lg:text-[40px] font-custom1 font-bold mt-2">
+            <div className="text-left text-[#1F1634] text-[20px] lg:text-[40px] font-custom mt-2">
                 {product.price} Lekë
             </div>
         </motion.div>
@@ -30,7 +30,7 @@ const ProductMenu = ({ category }) => {
     const selectedCategory = categoriesData.find(item => item.id === category?.id);
 
     return (
-        <div className="grid lg:grid-cols-2 gap-6 lg:px-[60px] px-5 lg:mt-24 mt-12">
+        <div className="grid lg:grid-cols-2 gap-5 lg:gap-6 lg:px-[60px] px-6 lg:mt-24 mt-12">
             {selectedCategory && selectedCategory.products && selectedCategory.products.length > 0 && (
                 <>
                     {selectedCategory.products.map((product, index) => (

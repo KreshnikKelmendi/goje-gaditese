@@ -1,8 +1,8 @@
-import product1 from "../assets/receta-1.jpg";
-import product2 from "../assets/receta-2.jpg";
-import product3 from "../assets/receta-3.jpg";
-import product4 from "../assets/prod4.jpg";
-import product5 from "../assets/prod5.jpg"
+import product1 from "../assets/prod2.png";
+import product2 from "../assets/prod1.png";
+import product3 from "../assets/prod3.png";
+import product4 from "../assets/prod4.png";
+import product5 from "../assets/prod5.png"
 
 
 const products = [

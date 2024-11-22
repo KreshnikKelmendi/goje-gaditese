@@ -3,13 +3,13 @@
 @import 'tailwindcss/utilities';
 
 @font-face {
-  font-family: Goodly;
-  src: url(../public/font/fonts/goodly-medium.otf)
+  font-family: DupletRounded;
+  src: url(../public/font/fonts/font1/DupletRounded-Regular.otf)
 }
 
 @font-face {
-  font-family: Goodly Sans;
-  src: url(../public/font/fonts/goodly-light.otf)
+  font-family: DupletRounded-Thin;
+  src: url(../public/font/fonts/font1/DupletRounded-Thin.otf)
 }
 
 .active{

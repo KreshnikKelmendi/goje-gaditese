@@ -35,7 +35,7 @@ const GalleryItem = ({ item, index }) => {
             <motion.img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[35vh] lg:h-[351px] object-cover transform transition-all duration-500 hover:scale-105 rounded-[10px] "
+                className="w-full h-[35vh] lg:h-[351px] 2xl:h-[40vh] object-cover transform transition-all duration-500 hover:scale-105 rounded-[10px] "
                 whileHover={{ rotate: 2, scale: 1.05 }}
             />
             {/* <motion.p
@@ -54,18 +54,63 @@ const GalleryItem = ({ item, index }) => {
 };
 
 const Galery = () => {
+    const titleText = "GALERIA";
+    const descriptionText = "Shiko galerinë, zbulo shijen që po t’pret!";
+
     return (
         <>
             {/* Header Section */}
-            <div className="flex flex-col lg:flex-row lg:h-[307px] px-5 py-16 lg:py-0 lg:items-center bg-[#1F1634] lg:px-[60px]">
-                <p className="text-[44px] lg:text-[84px] font-custom1 mb-2 text-[#FADEEA]">GALERIA</p>
-                <p className="text-[18px] font-custom leading-[21.6px] text-justify tracking-tighter lg:w-[625px] text-[#FADEEA] lg:ml-44">
-                    Shiko galerinë, zbulo shijen që po t’pret!
-                </p>
-            </div>
+        
+        <div className="flex flex-col lg:flex-row lg:h-[307px] 2xl:h-[35vh] px-6 py-16 lg:py-0 lg:items-center bg-[#1F1634] lg:px-[60px]">
+            {/* Animated Title */}
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+                }}
+                className="text-[44px] lg:text-[84px] font-custom tracking-[3px] mb-2 text-[#FADEEA]"
+            >
+                {titleText.split("").map((char, index) => (
+                    <motion.span
+                        key={index}
+                        variants={{
+                            hidden: { opacity: 0.6, y: 10 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                    >
+                        {char}
+                    </motion.span>
+                ))}
+            </motion.div>
+
+            {/* Animated Description */}
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { staggerChildren: 0.02 } },
+                }}
+                className="text-[16px] font-custom1 leading-[21.6px] font-bold tracking-[1px] lg:tracking-[3px] lg:w-[625px] text-[#FADEEA] lg:ml-44"
+            >
+                {descriptionText.split("").map((char, index) => (
+                    <motion.span
+                        key={index}
+                        variants={{
+                            hidden: { opacity: 0.2, y: 10 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                    >
+                        {char}
+                    </motion.span>
+                ))}
+            </motion.div>
+        </div>
 
             {/* Gallery Grid */}
-            <div className="w-full px-5 lg:px-[60px] mt-12">
+            <div className="w-full px-6 lg:px-[60px] mt-12">
                 <div className="grid lg:grid-cols-2 gap-x-6 gap-y-6">
                     {dataGalery?.map((item, index) => (
                         <GalleryItem key={item.title} item={item} index={index} />

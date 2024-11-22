@@ -19,13 +19,13 @@ const CategoryMenu = () => {
 
     return (
         <div className='w-full'>
-            <div className='lg:px-[60px] px-5 mt-10'>
-                <p className='font-custom1 text-[32px] text-[#4A296A]'>KATEGORITË</p>
+            <div className='lg:px-[60px] px-6 mt-10'>
+                <p className='font-custom tracking-[2px] text-[32px] text-[#4A296A]'>KATEGORITË</p>
 
                 {/* Toggle button for mobile devices */}
                 <div className="lg:hidden mt-5">
                     <button
-                        className="px-4 w-full py-2 bg-[#D53C6F] text-white font-bold rounded-[20px]"
+                        className="px-4 w-full font-custom tracking-[2px] py-2 bg-[#D53C6F] text-white font-bold rounded-[20px]"
                         onClick={() => setShowCategories(!showCategories)}
                     >
                         {showCategories ? 'Mbyll Kategoritë' : 'Shfaq Kategoritë'}
@@ -44,7 +44,7 @@ const CategoryMenu = () => {
                     {categoriesData.map((category) => (
                         <div
                             key={category.id}
-                            className={`font-custom1 text-[#D53C6F] uppercase text-[16px] cursor-pointer ${selectedCategory.id === category.id ? 'font-bold underline lg:no-underline lg:px-4 py-1 w-fit flex lg:justify-center lg:items-center border-b-red-600 lg:border lg:border-[#D53C6F] rounded-[20px]' : ''}`}
+                            className={`font-custom1 font-bold tracking-[2px] text-[#D53C6F] uppercase text-[18px] cursor-pointer ${selectedCategory.id === category.id ? 'font-bold underline lg:no-underline lg:px-4 py-1 w-fit flex lg:justify-center lg:items-center border-b-red-600 lg:border lg:border-[#D53C6F] rounded-[20px]' : ''}`}
                             onClick={() => handleCategoryClick(category)}
                         >
                             {category.category}
@@ -52,10 +52,10 @@ const CategoryMenu = () => {
                     ))}
                 </div>
 
-                <div className='absolute top-72 right-0 lg:top-64 lg:right-0 flex z-10'>
-                    <img src={img} alt='' className='w-40 h-40 lg:w-[408px] lg:h-[411px]' />
+                <div className='absolute top-80 right-0 lg:top-64 lg:right-0 flex z-10'>
+                    <img src={img} alt='' className='w-32 h-32 lg:w-[408px] lg:h-[411px]' />
                     <div className='lg:mt-32 hidden lg:block'>
-                        <svg width="204" height="1973" viewBox="0 0 204 1973" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className=' w-[140px] opacity-30 lg:opacity-35 lg:w-[204px] lg:h-[100vw]' viewBox="0 0 204 1973" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_190_395" maskUnits="userSpaceOnUse" x="0" y="0" width="202" height="3821">
                                 <path d="M25.7835 770.111L2.84962 770.111C2.84962 803.318 30.1253 830.307 63.6354 830.307C91.9354 830.307 115.76 811.057 122.506 785.105C125.312 794.784 130.544 803.671 137.959 811.013L154.168 794.961C147.021 787.883 143.08 778.468 143.08 768.457C143.08 758.446 147.021 749.031 154.168 741.953L137.959 725.901C130.121 733.663 124.711 743.144 122.039 753.507C114.713 728.392 91.3119 709.959 63.6354 709.959L63.6354 732.67C84.4986 732.67 101.487 749.472 101.487 770.133C101.487 790.793 84.4986 807.595 63.6354 807.595C59.4717 807.595 55.4861 806.912 51.7455 805.677C59.2936 795.49 63.4573 783.12 63.4573 770.133C63.4573 749.141 52.6806 730.002 34.6453 718.933L22.5772 738.249C33.8214 745.15 40.5235 757.079 40.5235 770.155C40.5235 778.269 37.9184 785.987 33.1757 792.337C28.5444 786.119 25.7835 778.423 25.7835 770.111Z" fill="#FADEEA" />
                                 <path d="M157.42 541.278C167.885 538.632 177.459 533.274 185.297 525.513L169.087 509.461C161.94 516.539 152.432 520.441 142.324 520.441C132.215 520.441 122.707 516.539 115.56 509.461L99.3505 525.513C106.743 532.833 115.716 538.037 125.513 540.815C99.306 547.496 79.8679 571.112 79.8679 599.115C79.8679 632.3 107.144 659.311 140.654 659.311L140.654 636.6C132.259 636.6 124.511 633.887 118.21 629.279C124.622 624.604 132.415 622.003 140.609 622.003C153.813 622.003 165.859 628.64 172.828 639.775L192.333 627.824C181.155 609.963 161.829 599.291 140.631 599.291C127.517 599.291 115.026 603.415 104.739 610.89C103.492 607.185 102.802 603.216 102.802 599.115C102.802 578.454 119.768 561.63 140.631 561.63C161.495 561.63 178.461 578.454 178.461 599.115L201.395 599.115C201.395 571.707 182.781 548.533 157.42 541.278Z" fill="#FADEEA" />

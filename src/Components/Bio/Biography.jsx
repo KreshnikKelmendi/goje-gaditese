@@ -12,7 +12,7 @@ const Biography = () => {
     });
 
     return (
-        <div className="w-full container mx-auto flex flex-col lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-44 relative">
+        <div className="w-full lg:py-12 container mx-auto flex flex-col lg:flex-row px-6 lg:px-[130px] 2xl:px-[211px] mt-32 lg:mt-96 relative">
             {/* Image */}
             <img src={bioImage} alt="" className=" lg:h-[497px] object-cover rounded-[30px]" />
 

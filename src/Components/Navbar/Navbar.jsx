@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
-    // State to manage the navbar's visibility
     const [nav, setNav] = useState(false);
 
-    // Toggle function to handle the navbar's display
     const handleNav = () => {
         setNav(!nav);
     };
 
-    // Array containing navigation items with corresponding links
     const navItems = [
         { id: 0, text: 'Ballina', link: '/' },
         { id: 1, text: 'Kush Jemi', link: '/kush-jemi' },
@@ -23,14 +21,33 @@ const Navbar = () => {
 
     const handleClick = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        handleNav()
+        handleNav();
     };
 
+    // Framer Motion Variants
+    const containerVariants = {
+        hidden: { opacity: 0, x: '100%' },
+        visible: {
+            opacity: 1,
+            x: '0%',
+            transition: { 
+                duration: 0.5, 
+                staggerChildren: 0.1 // Delay between each child animation
+            },
+        },
+        exit: { opacity: 0, x: '100%', transition: { duration: 0.5 } },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0.3, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    };
+    
+
     return (
-        <div className='bg-[#1F1634] sticky top-0 z-50 w-full flex justify-between items-center h-[67px] py-[40px] px-5 lg:px-[60px] text-white uppercase'>
-            {/* Desktop Navigation */}
-            <Link to="/">
-                <svg width="97" height="45" viewBox="0 0 97 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="bg-[#1F1634] sticky top-0 z-50 w-full flex justify-between items-center h-[67px] py-[40px] px-6 lg:px-[60px] text-white uppercase">
+            <Link  onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth"})} to="/">
+            <svg width="97" height="45" viewBox="0 0 97 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_245_1632)">
                         <path d="M29.1575 30.4587C29.1541 32.3624 28.7704 34.2801 28.0346 36.044C27.2988 37.808 26.2142 39.4217 24.8646 40.763C23.515 42.1078 21.9039 43.1837 20.1393 43.9102C18.3782 44.6367 16.4706 45.007 14.577 45.0035C12.6834 45 10.7793 44.6193 9.0252 43.8822C7.27108 43.1487 5.66691 42.0659 4.33126 40.7211C2.99561 39.3763 1.925 37.766 1.20313 36.0091C0.843933 35.1323 0.568434 34.2172 0.387093 33.2846C0.35222 33.0505 0.289448 32.82 0.244113 32.586C0.205752 32.3519 0.160417 32.1179 0.125544 31.8839C0.0976452 31.6464 0.0662592 31.4123 0.0418479 31.1748L0 30.4587H5.49952L5.47859 30.9093V31.3599C5.49603 31.6603 5.503 31.9642 5.5588 32.2576C5.67737 32.8479 5.85522 33.4243 6.08887 33.9797C6.55269 35.0869 7.23969 36.1069 8.09409 36.9557C8.94848 37.8045 9.96678 38.4821 11.0758 38.9327C12.1812 39.3868 13.3739 39.6173 14.577 39.6138C15.7802 39.6068 16.9693 39.3658 18.0678 38.9048C19.1663 38.4437 20.1777 37.7626 21.0181 36.9103C21.8586 36.0615 22.5316 35.045 22.9815 33.9447C23.4314 32.8444 23.6615 31.6568 23.658 30.4587H29.1575Z" fill="#D43C5E" />
                         <path d="M14.5805 30.3819C6.53874 30.3819 0 23.8326 0 15.7778C0 7.72296 6.53874 1.17712 14.5805 1.17712C19.0443 1.17712 23.2012 3.18209 25.9841 6.68205C28.0311 9.25288 29.1575 12.4839 29.1575 15.7778C29.1575 23.8291 22.6188 30.3819 14.577 30.3819H14.5805ZM14.5805 6.68555C9.5762 6.68555 5.503 10.7653 5.503 15.7778C5.503 20.7902 9.5762 24.87 14.5805 24.87C19.5848 24.87 23.658 20.7902 23.658 15.7778C23.658 13.6959 22.9745 11.7364 21.6842 10.1156C19.9475 7.93603 17.3599 6.68555 14.5805 6.68555Z" fill="#F8E2EA" />
@@ -75,11 +92,11 @@ const Navbar = () => {
                 </svg>
             </Link>
 
-            <ul className='hidden md:flex space-x-10'>
+            <ul className="hidden md:flex space-x-10">
                 {navItems.map(item => (
                     <li
                         key={item.id}
-                        className={`cursor-pointer w-[100px] h-[29px] flex justify-center items-center text-base font-custom duration-300 hover:text-[#D53C6F] ${item.text === 'Kontakt' ? 'bg-[#D53D6E] text-white rounded-[14.5px]' : ''}`}
+                        className={`cursor-pointer w-[100px] h-[29px] flex justify-center items-center text-base font-custom tracking-[1px] duration-300 hover:text-[#D53C6F] ${item.text === 'Kontakt' ? 'bg-[#D53D6E] text-white rounded-[14.5px]' : ''}`}
                     >
                         <NavLink onClick={handleClick} to={item.link} className="w-full h-full flex justify-center items-center">
                             {item.text}
@@ -88,40 +105,37 @@ const Navbar = () => {
                 ))}
             </ul>
 
-            {/* Mobile Navigation Icon */}
-            <div onClick={handleNav} className='block md:hidden'>
+            <div onClick={handleNav} className="block md:hidden">
                 {<AiOutlineMenu size={20} />}
             </div>
 
-            {/* Mobile Navigation Menu */}
-
-            <ul
-                className={
-                    nav
-                        ? 'fixed md:hidden justify-center items-center fle right-0 top-0 w-[55%] h-full border-r border-r-gray-900 bg-[#1F1634] z-50 ease-in-out duration-500'
-                        : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[100%]'
-                }
+            {/* Mobile Navigation */}
+            <motion.ul
+                className={`fixed md:hidden right-0 top-0 w-[55%] h-full border-r border-r-gray-900 bg-[#1F1634] z-50`}
+                variants={containerVariants}
+                initial="hidden"
+                animate={nav ? "visible" : "exit"}
             >
-                <div className='flex justify-between absolute right-1 items-center px-2 pt-5'>
-                
-                    {/* Mobile Navigation Items */}
-                    <div onClick={handleNav} className='block md:hidden'>
-                        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={20} />}
+                <div className="flex justify-between absolute right-1 items-center px-2 pt-5">
+                    <div onClick={handleNav} className="block md:hidden">
+                        {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={20} />}
                     </div>
                 </div>
-                <div className='h-screen justify-center items-end flex flex-col'>
-                    {navItems.map(item => (
-                        <li
+
+                <div className="h-screen flex flex-col justify-center items-end">
+                    {navItems.map((item, index) => (
+                        <motion.li
                             key={item.id}
-                            className={`p-4 font-custom text-3xl flex justify-center items-center rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer ${item.text === 'Kontakt' ? 'text-[#ff0000]' : ''}`}
+                            className={`p-4 font-custom tracking-[1px] text-3xl flex justify-center items-center rounded-xl duration-300 hover:text-black cursor-pointer ${item.text === 'Kontakt' ? 'text-[#D53C6F]' : ''}`}
+                            variants={itemVariants}
                         >
                             <NavLink onClick={handleClick} to={item.link} className="block w-full h-full">
                                 {item.text}
                             </NavLink>
-                        </li>
+                        </motion.li>
                     ))}
                 </div>
-            </ul>
+            </motion.ul>
         </div>
     );
 };

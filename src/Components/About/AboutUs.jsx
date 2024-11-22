@@ -1,27 +1,94 @@
 import React from 'react'
-import { motion } from 'framer-motion'; // Import Framer Motion
+import { motion, useTransform, useViewportScroll } from 'framer-motion'; // Import Framer Motion
 import { useInView } from 'react-intersection-observer'; // Import the hook
 import bioImage from '../assets/sanida-benida.jpg';
 
 const AboutUs = () => {
     const { ref, inView } = useInView({
         triggerOnce: true, // Ensure it triggers only once
-        threshold: 0.3, // Trigger when 30% of the component is visible
     });
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3, // Delay between child animations
+            },
+        },
+    };
+
+    const childVariants = {
+        hidden: { opacity: 0, y: 50, rotateX: 90 }, // Start flipped from the bottom
+        visible: {
+            opacity: 1,
+            y: 0,
+            rotateX: 0, // Unflip to normal
+            transition: { duration: 0.8, ease: "easeOut" },
+        },
+    };
+
+    const { scrollY } = useViewportScroll();
+    
+    // Scale the image slightly as the user scrolls
+    const scale = useTransform(scrollY, [0, 400], [1, 1.1]); // Adjust values as needed
+
     return (
         <>
-            <div className="flex flex-col lg:flex-row lg:h-[307px] px-5 py-16 lg:py-0 lg:justify-between 2xl:justify-start lg:items-center bg-[#1F1634] lg:px-[60px]">
-                <p className="text-[44px] lg:text-[64px] 2xl:text-[84px] font-custom1 font-extrabold mb-2 text-[#FADEEA]">KUSH JEMI NE</p>
-                <p className="text-[18px] font-custom leading-[21.6px] text-justify tracking-tighter lg:w-1/2 2xl:w-[725px] text-[#FADEEA] 2xl:pl-40">
-                    Goje Gaditese nisi si një projekt pasioni, i krijuar nga dëshira për të ofruar ushqim të shijshëm dhe të shëndetshëm për ngjarje të ndryshme, duke përdorur përbërës lokalë dhe recetave tradicionale.<br /><br/> Fillimisht, shërbimi i catering-ut u ofrua nga shtëpia, ku ekipi i vogël gatunte me dashuri dhe kujdes për miqtë dhe familjen. Gjatë kohës, fjala për cilësinë dhe shijen e shkëlqyer u përhap shpejt, dhe kërkesa për shërbimin u rrit ndjeshëm.
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible" // Trigger animation when in view
+                viewport={{ once: true, amount: 0.3 }} // Configure the viewport trigger
+                className="flex flex-col lg:flex-row lg:h-[307px] 2xl:h-[35vh] px-6 py-16 lg:py-0 lg:justify-between 2xl:justify-start lg:items-center bg-[#1F1634] lg:px-[60px]"
+            >
+                <motion.p
+                    variants={childVariants}
+                    className="text-[44px] lg:text-[64px] 2xl:text-[84px] font-custom tracking-[3.5px] mb-2 text-[#FADEEA]"
+                >
+                    KUSH JEMI NE
+                </motion.p>
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1, transition: { staggerChildren: 0.013 } },
+                    }}
+                    className="text-[16px] font-bold tracking-[1px] font-custom1 leading-[21.6px] lg:tracking-[3px] lg:w-1/2 2xl:w-[725px] text-[#FADEEA] 2xl:pl-40"
+                >
+                    {`Goje Gaditese nisi si një projekt pasioni, i krijuar nga dëshira për të ofruar ushqim të shijshëm dhe të shëndetshëm për ngjarje të ndryshme, duke përdorur përbërës lokalë dhe recetave tradicionale.
 
+                        Fillimisht, shërbimi i catering-ut u ofrua nga shtëpia, ku ekipi i vogël gatunte me dashuri dhe kujdes për miqtë dhe familjen. 
+                        Gjatë kohës, fjala për cilësinë dhe shijen e shkëlqyer u përhap shpejt, dhe kërkesa për shërbimin u rrit ndjeshëm.`
+                        .split("")
+                        .map((char, index) => (
+                            <motion.span
+                                key={index}
+                                variants={{
+                                    hidden: { opacity: 0.4, y: 10 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                            >
+                                {char === "\n" ? <br /> : char}
+                            </motion.span>
+                        ))}
+                </motion.div>
 
-                </p>
-            </div>
+            </motion.div>
 
-            <div className="w-full flex flex-col justify-center items-center lg:flex-row px-5 lg:px-[130px] 2xl:px-[211px] mt-44 lg:mt-44 relative">
+            <div className="w-full flex flex-col justify-center items-center lg:flex-row px-6 lg:px-[130px] 2xl:px-[211px] mt-44 lg:mt-44 relative">
                 {/* Image */}
-                <img src={bioImage} alt="" className="lg:w-[523px] lg:h-[497px] object-cover rounded-[30px]" />
+                <motion.div
+            style={{ scale }} // Apply the scale transformation
+            className="lg:w-[523px] lg:h-[497px] rounded-[30px] overflow-hidden"
+        >
+            <img
+                src={bioImage}
+                alt="Bio"
+                className="w-full h-full object-cover"
+            />
+        </motion.div>
 
                 {/* SVG Drawing and Fill Animation */}
                 <div className="absolute top-[-70px] lg:top-[10px] ml-[-140px] lg:ml-[-650px]" ref={ref}>
