@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
 
 const ProdCard = ({ product, index }) => {
   const { ref, inView } = useInView({
@@ -23,15 +22,20 @@ const ProdCard = ({ product, index }) => {
     }),
   };
 
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col lg:flex-row py-6 px-4 lg:py-4 mb-4 rounded-[10px]"
-      style={{ backgroundColor: product.backgroundColor }}
+      className="flex flex-col lg:flex-row py-6 px-4 lg:py-4 mb-4 rounded-[10px] transition-all duration-300"
+      style={{
+        backgroundColor: '#FADEEA', // Default color for all cards
+        transition: 'background-color 0.3s ease-in-out', // Smooth transition
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = product.backgroundColor; // Change to product-specific color
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = '#FADEEA'; // Revert to default color
+      }}
       variants={cardVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
@@ -40,28 +44,23 @@ const ProdCard = ({ product, index }) => {
       <img
         src={product.image}
         alt={product.title}
-        className="h-[30vh] lg:w-[250px] 2xl:h-[250px] rounded-[10px] object-cover"
+        className="h-[30vh] lg:w-[250px] lg:h-full 2xl:h-[250px] rounded-[10px] object-cover"
       />
       <div className="flex flex-col justify-center mt-2 lg:mt-0 lg:p-4 lg:w-2/3 2xl:ml-5">
         <div>
-          <p className="text-[32px] font-custom leading-[30.8px]" style={{ color: product.titleColor }}>
+          <p
+            className="text-[32px] font-custom leading-[30.8px]"
+            // style={{ color: product.titleColor }}
+          >
             {product.title}
           </p>
-          <p className="mt-5 text-[16px] tracking-[1px] leading-[18px] font-custom1 font-bold" style={{ color: product.descriptionColor }}>
+          <p
+            className="mt-5 text-[16px] tracking-[1px] lg:tracking-[2px] leading-[18px] font-custom1 font-bold"
+            // style={{ color: product.descriptionColor }}
+          >
             {product.description}
           </p>
         </div>
-        {/* <Link to={`/produktet/${product.id}`} onClick={handleClick}>
-          <button
-            className="lg:w-[131px] w-full py-3 lg:py-0 lg:h-[32px] bg-[#D53D6E] rounded-[20px] text-[#F3CCE7] text-[14px] font-custom1 mt-6"
-            style={{
-              backgroundColor: product.buttonColor,
-              color: product.buttonTextColor,
-            }}
-          >
-            Shiko më shumë
-          </button>
-        </Link> */}
       </div>
     </motion.div>
   );

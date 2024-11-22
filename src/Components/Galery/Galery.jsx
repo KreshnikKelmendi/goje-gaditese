@@ -93,7 +93,7 @@ const Galery = () => {
                     hidden: { opacity: 0 },
                     visible: { opacity: 1, transition: { staggerChildren: 0.02 } },
                 }}
-                className="text-[16px] font-custom1 leading-[21.6px] font-bold tracking-[1px] lg:tracking-[3px] lg:w-[625px] text-[#FADEEA] lg:ml-44"
+                className="text-[16px] font-custom1 leading-[21.6px] font-bold tracking-[1px] lg:tracking-[2px] lg:w-[625px] text-[#FADEEA] lg:ml-44"
             >
                 {descriptionText.split("").map((char, index) => (
                     <motion.span

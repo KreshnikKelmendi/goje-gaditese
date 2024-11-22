@@ -43,7 +43,7 @@ const TextBiography = () => {
                 variants={flipVariants}
                 className="inline-block tracking-wide"
             >
-                <span className="text-[#D53D6E] font-custom  tracking-[1px] lg:tracking-[3px] text-[38px] leading-tight lg:text-[55px] lg:leading-[66px]">
+                <span className="text-[#D53D6E] font-custom  tracking-[1px] lg:tracking-[2px] text-[38px] leading-tight lg:text-[55px] lg:leading-[66px]">
                     {title}
                 </span>
             </motion.div>

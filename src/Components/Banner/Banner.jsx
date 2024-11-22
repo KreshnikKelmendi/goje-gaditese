@@ -53,7 +53,7 @@ const Banner = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col-reverse lg:flex-row items-center lg:h-[725px] 2xl:h-[925px] relative"
+      className="w-full flex flex-col-reverse lg:flex-row items-center lg:h-[725px] relative"
       onMouseEnter={() => setCursorActive(true)}
       onMouseLeave={() => setCursorActive(false)}
     >

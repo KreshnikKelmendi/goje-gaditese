@@ -55,7 +55,7 @@ const AboutUs = () => {
                         hidden: { opacity: 0 },
                         visible: { opacity: 1, transition: { staggerChildren: 0.013 } },
                     }}
-                    className="text-[16px] font-bold tracking-[1px] font-custom1 leading-[21.6px] lg:tracking-[3px] lg:w-1/2 2xl:w-[725px] text-[#FADEEA] 2xl:pl-40"
+                    className="text-[16px] tracking-[1px] font-custom1 leading-[21.6px] lg:tracking-[2px] lg:w-1/2 2xl:w-[725px] text-[#FADEEA] 2xl:pl-40"
                 >
                     {`Goje Gaditese nisi si një projekt pasioni, i krijuar nga dëshira për të ofruar ushqim të shijshëm dhe të shëndetshëm për ngjarje të ndryshme, duke përdorur përbërës lokalë dhe recetave tradicionale.
 

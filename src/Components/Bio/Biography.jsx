@@ -7,7 +7,6 @@ import TextBiography from './TextBiography';
 const Biography = () => {
     // Set up the inView hook
     const { ref, inView } = useInView({
-        triggerOnce: true, // Ensure it triggers only once
         threshold: 0.3, // Trigger when 30% of the component is visible
     });
 
@@ -51,7 +50,7 @@ const Biography = () => {
                         fontWeight="bold"
                         initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ duration: 1, ease: 'easeInOut', delay: 3.5 }} // Delayed after background animation
+                        transition={{ duration: 1, ease: 'easeInOut', delay: 3.5, repeatDelay: Infinity }} // Delayed after background animation
                     >
                         Ne jemi Gojë Gaditëset
                     </motion.text>

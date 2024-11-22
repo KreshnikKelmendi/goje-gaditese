@@ -39,7 +39,7 @@ const Product = () => {
                         hidden: { opacity: 0 },
                         visible: { opacity: 1, transition: { staggerChildren: 0.01 } },
                     }}
-                    className="text-[16px] font-bold tracking-[1px] font-custom1 lg:tracking-[3px] leading-[21.6px] lg:w-[625px] text-[#FADEEA] lg:ml-44"
+                    className="text-[16px] tracking-[1px] font-custom1 lg:tracking-[2px] leading-[21.6px] lg:w-[625px] text-[#FADEEA] lg:ml-44"
                 >
                     {descriptionText.split("").map((char, index) => (
                         <motion.span

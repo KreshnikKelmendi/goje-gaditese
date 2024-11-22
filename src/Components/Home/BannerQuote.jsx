@@ -49,7 +49,7 @@ const BannerQuote = () => {
         </div>
 
         <motion.p
-          className="text-[16px] lg:w-[481px] lg:text-[16px] font-bold text-white leading-[21.96px] mt-6 lg:mt-0 font-custom1 tracking-[1px] lg:tracking-[3px]"
+          className="text-[16px] lg:w-[481px] lg:text-[16px] font-bold text-white leading-[21.96px] mt-6 lg:mt-0 font-custom1 tracking-[1px] lg:tracking-[2px]"
           initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
