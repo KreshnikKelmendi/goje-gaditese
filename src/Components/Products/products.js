@@ -8,7 +8,7 @@ import product5 from "../assets/prod5.png"
 const products = [
     {
         id: "receta-jonë-me-djathë-dhe-kungull",
-        backgroundColor: '#FADEEA',
+        backgroundColor: '#D53C6F',
         image: product1,
       
         title: 'Receta me djathë dhe kungull',
